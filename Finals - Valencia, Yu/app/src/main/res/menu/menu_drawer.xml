@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/item_main"
+        android:title="">
+
+        <menu>
+
+            <item
+                android:id="@+id/item_profile"
+                android:title="Profile"
+                android:checkable="true"
+                android:icon="@drawable/ic_baseline_person_24"/>
+
+            <item
+                android:id="@+id/item_settings"
+                android:title="Settings"
+                android:checkable="true"
+                android:icon="@drawable/ic_baseline_settings_24"/>
+
+            <item
+                android:id="@+id/item_contactUs"
+                android:title="Contract Us"
+                android:checkable="true"
+                android:icon="@drawable/ic_baseline_contact_support_24"/>
+
+            <item
+                android:id="@+id/item_signOut"
+                android:title="Sign Out"
+                android:checkable="true"
+                android:icon="@drawable/ic_baseline_logout_24"/>
+
+        </menu>
+
+    </item>
+
+
+</menu>
