@@ -67,7 +67,7 @@ public class ProfileActivity extends AppCompatActivity {
     String temp;
 
 
-    @SuppressLint("MissingInflatedId")
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,12 +80,6 @@ public class ProfileActivity extends AppCompatActivity {
         mUser = mAuth.getCurrentUser();
         mRef = FirebaseDatabase.getInstance().getReference("Users/" + mUser.getUid());
         ivLogo = findViewById(R.id.iv_logo);
-        tvCash = findViewById(R.id.tv_cash);
-        btnScan = findViewById(R.id.btn_scan);
-        btnQR = findViewById(R.id.btn_qr);
-        btnProfile = findViewById(R.id.btn_profile);
-        tvProgram = findViewById(R.id.tv_program);
-        tvUid = findViewById(R.id.tv_uid);
 
         dlContent = findViewById(R.id.dl_content);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, dlContent, R.string.drawer_open, R.string.drawer_close);
@@ -111,6 +105,11 @@ public class ProfileActivity extends AppCompatActivity {
 
                     case R.id.item_settings:
                         Toast.makeText(ProfileActivity.this, "Settings clicked.", Toast.LENGTH_SHORT).show();
+                        break;
+
+                    case R.id.item_showQR:
+                        Intent intentQR = new Intent(ProfileActivity.this, QRActivity.class);
+                        startActivity(intentQR);
                         break;
 
                     case R.id.item_contactUs:
@@ -141,8 +140,6 @@ public class ProfileActivity extends AppCompatActivity {
                 //tvProgram.setText(um.collegeProgram);
                 temp = "Cash: ₱ " + um.cash;
                 dltvCash.setText(temp);
-                tvHeaderName.setText(um.name);
-
             }
 
             @Override
@@ -151,10 +148,8 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
-        //tvUid.setText(mUser.getUid());
-
         //Scan QR code
-        IntentIntegrator qrScan = new IntentIntegrator(this);
+        /*IntentIntegrator qrScan = new IntentIntegrator(this);
         btnScan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -163,25 +158,8 @@ public class ProfileActivity extends AppCompatActivity {
                 qrScan.setBeepEnabled(true); //pagkascan gagawa ng beep na sound
                 qrScan.initiateScan(); //starts the camera
             }
-        });
+        });*/
 
-        //Go to QR activity
-        btnQR.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ProfileActivity.this, QRActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        //Go to Profile Screen activity
-        btnProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ProfileActivity.this, ProfileScreenActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 
     @Override
@@ -196,7 +174,6 @@ public class ProfileActivity extends AppCompatActivity {
                 //QR output nakukuha rito
                 //Toast.makeText(ProfileActivity.this, intentResult.getContents(), Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(ProfileActivity.this, PayActivity.class);
-                intent.putExtra("userCash", tvCash.getText());
                 intent.putExtra("cashReceiver", intentResult.getContents());
                 startActivity(intent);
 
