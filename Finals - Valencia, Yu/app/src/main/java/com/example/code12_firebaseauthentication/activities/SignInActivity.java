@@ -55,6 +55,11 @@ public class SignInActivity extends AppCompatActivity {
         //For login & logout
         mAuth = FirebaseAuth.getInstance();
 
+        //Removes action bar
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

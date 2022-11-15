@@ -13,6 +13,8 @@ import android.widget.Toast;
 
 import com.example.code12_firebaseauthentication.R;
 import com.example.code12_firebaseauthentication.models.UserModel;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -74,8 +76,18 @@ public class EditProfileActivity extends AppCompatActivity {
                     mRef.child("address").setValue(etAddress.getText().toString());
                     mRef.child("email").setValue(etEmail.getText().toString());
 
-
-                    Toast.makeText(EditProfileActivity.this, "Profile has been updated.", Toast.LENGTH_SHORT).show();
+                    mUser.updateEmail(etEmail.getText().toString())
+                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            if (task.isSuccessful()){
+                                                Toast.makeText(EditProfileActivity.this, "Profile has been updated.", Toast.LENGTH_SHORT).show();
+                                            }
+                                            else{
+                                                Toast.makeText(EditProfileActivity.this, "Update failed. Please try again.", Toast.LENGTH_SHORT).show();
+                                            }
+                                        }
+                                    });
 
                     startActivity(new Intent(EditProfileActivity.this, ProfileScreenActivity.class));
                     finish();

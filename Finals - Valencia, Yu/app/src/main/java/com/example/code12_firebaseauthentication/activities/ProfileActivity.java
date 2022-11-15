@@ -66,6 +66,9 @@ public class ProfileActivity extends AppCompatActivity {
     //Make drawer layout do something on click
     private NavigationView nav;
 
+    //For web views
+    private Button btnLearnMore1, btnLearnMore2, btnLearnMore3;
+
     String temp;
 
     //Bottom Navigation
@@ -102,6 +105,11 @@ public class ProfileActivity extends AppCompatActivity {
 
         //Make drawer layout do something on click
         nav = findViewById(R.id.nv_menu);
+
+        //For web view
+        btnLearnMore1 = findViewById(R.id.btn_learnMore1);
+        btnLearnMore2 = findViewById(R.id.btn_learnMore2);
+        btnLearnMore3 = findViewById(R.id.btn_learnMore3);
 
         //Drawer Layout
         tvHeaderName = nav.getHeaderView(0).findViewById(R.id.tv_header_name);
@@ -153,6 +161,7 @@ public class ProfileActivity extends AppCompatActivity {
                 //Get data from mRef,
                 UserModel um = snapshot.getValue(UserModel.class);
                 //tvProgram.setText(um.collegeProgram);
+                tvHeaderName.setText(um.name);
                 temp = "Cash: ₱ " + um.cash;
                 dltvCash.setText(temp);
             }
@@ -194,6 +203,26 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
+        btnLearnMore1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ProfileActivity.this, WebViewActivity.class));
+            }
+        });
+
+        btnLearnMore2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ProfileActivity.this, WebViewActivity.class));
+            }
+        });
+
+        btnLearnMore3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ProfileActivity.this, WebViewActivity.class));
+            }
+        });
     }
 
 
