@@ -23,6 +23,8 @@ import android.widget.Toast;
 
 import com.example.code12_firebaseauthentication.R;
 import com.example.code12_firebaseauthentication.models.UserModel;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -66,6 +68,13 @@ public class ProfileActivity extends AppCompatActivity {
 
     String temp;
 
+    //Bottom Navigation
+    BottomNavigationView bottomNavigationView;
+
+    JobFragment jobFragment = new JobFragment();
+    StoreFragment storeFragment = new StoreFragment();
+    HomeFragment homeFragment = new HomeFragment();
+
 
 
     @Override
@@ -76,10 +85,14 @@ public class ProfileActivity extends AppCompatActivity {
         //set text in action bar
         setTitle("Kidzania");
 
+        //bottom navigation
+        bottomNavigationView  = findViewById(R.id.bottom_navigation);
+
+
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
         mRef = FirebaseDatabase.getInstance().getReference("Users/" + mUser.getUid());
-        ivLogo = findViewById(R.id.iv_logo);
+
 
         dlContent = findViewById(R.id.dl_content);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, dlContent, R.string.drawer_open, R.string.drawer_close);
@@ -104,7 +117,8 @@ public class ProfileActivity extends AppCompatActivity {
                         break;
 
                     case R.id.item_settings:
-                        Toast.makeText(ProfileActivity.this, "Settings clicked.", Toast.LENGTH_SHORT).show();
+                        Intent intentS = new Intent(ProfileActivity.this, EditProfileActivity.class);
+                        startActivity(intentS);
                         break;
 
                     case R.id.item_showQR:
@@ -113,12 +127,13 @@ public class ProfileActivity extends AppCompatActivity {
                         break;
 
                     case R.id.item_contactUs:
-                        Toast.makeText(ProfileActivity.this, "Contact us clicked.", Toast.LENGTH_SHORT).show();
+                        Intent intentC = new Intent(ProfileActivity.this, ContactUsActivity.class);
+                        startActivity(intentC);
                         break;
                     case R.id.item_signOut:
                         mAuth.signOut();
                         startActivity(new Intent(ProfileActivity.this, SignInActivity.class));
-                        Toast.makeText(ProfileActivity.this, "Signed our successfully.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ProfileActivity.this, "Signed out successfully.", Toast.LENGTH_SHORT).show();
                         finish();
                         break;
                 }
@@ -160,7 +175,28 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });*/
 
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.home:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.container,homeFragment).commit();
+                        return true;
+                    case R.id.job:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.container,jobFragment).commit();
+                        return true;
+                    case R.id.store:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.container,storeFragment).commit();
+                        return true;
+                }
+
+                return false;
+            }
+        });
+
     }
+
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {

@@ -12,13 +12,523 @@
 
 
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:stretchColumns="1">
+
+    <ImageView
+        android:id="@+id/iv_logo1"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:src="@drawable/kidzania_logo"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/white"/>
+
+
+    <LinearLayout
+        android:id="@+id/intro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/iv_logo1">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center">
+
+
+            <ImageView
+                android:id="@+id/iv_logo2"
+                android:layout_width="133dp"
+                android:layout_height="90dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:src="@drawable/kz_logo" />
+
+            <TextView
+                android:id="@+id/tv_qst"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="30dp"
+                android:textSize="28dp"
+                style="@style/TextAppearance.Material3.TitleMedium"
+                android:text="What is Kidzania?"
+                android:textColor="@color/black"
+               />
+
+        </GridLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/intro">
+
+        <TextView
+            android:id="@+id/tv_intro1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:justificationMode="inter_word"
+            android:text="KidZania is an interactive city made for children 1-14 that combines inspiration, fun and learning through realistic role-play. Kids can independently explore a scaled city of over 7,000 square meters with more than 100 exciting careers that they can try."
+            android:textColor="@color/black"
+            style="@style/TextAppearance.Material3.TitleMedium"/>
+
+        <TextView android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="&#160;&#160;&#160;&#160;&#160;&#160;"/>
+
+        <TextView
+            android:id="@+id/tv_intro2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:text="Fueled by a child’s natural desire to create, explore and collaborate, KidZania is equal parts entertainment and learning, making it one of the most progressive family entertainment concepts in the world today."
+            android:justificationMode="inter_word"
+            android:textColor="@color/black"
+            style="@style/TextAppearance.Material3.TitleMedium"/>
+
+        <TextView android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="&#160;&#160;&#160;&#160;&#160;&#160;"/>
+
+        <TextView
+            android:id="@+id/tv_intro3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:text="Through ultrarealistic role-play, children learn about different careers, the inner-workings of a city and the concept of managing money. Each experience is designed to empower kids, giving them the confidence to be their best selves, and inspiration to be great global citizens. "
+            android:justificationMode="inter_word"
+            android:textColor="@color/black"
+            style="@style/TextAppearance.Material3.TitleMedium"/>
+
+        <TextView android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="&#160;&#160;&#160;&#160;&#160;&#160;"/>
+
+        <TextView
+            android:id="@+id/tv_intro4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:text="Each KidZania facility offers experiences that are relevant to each region, culture and geography by way of professions, entertainment and food. At every location, KidZania uses real-world fun and learning to ready kids for a better world."
+            android:justificationMode="inter_word"
+            android:textColor="@color/black"
+            style="@style/TextAppearance.Material3.TitleMedium"/>
+
+    </LinearLayout>
 
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/rp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/iv_logo1">
+
+            <TextView android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="&#160;&#160;&#160;&#160;&#160;&#160;"/>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center">
+
+
+                <ImageView
+                    android:id="@+id/ic_baseline_play_arrow_24"
+                    android:layout_width="133dp"
+                    android:layout_height="90dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white"
+                    android:src="@drawable/kz_logo" />
+
+                <TextView
+                    android:id="@+id/tv_rp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="30dp"
+                    android:textSize="28dp"
+                    style="@style/TextAppearance.Material3.TitleMedium"
+                    android:text="Role-Playing"
+                    android:textColor="@color/black"
+                    />
+
+            </GridLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/intro">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:justificationMode="inter_word"
+                android:text="At KidZania, children ages 1 to 14 have the opportunity of having adult-like experiences while assuming the role of firemen, construction workers, police officers, and fashion designers, among others."
+                android:textColor="@color/black"
+                style="@style/TextAppearance.Material3.TitleMedium"/>
+
+            <TextView android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="&#160;&#160;&#160;&#160;&#160;&#160;"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="Role-playing is an embedded behavior in children. They perform it naturally without previous learning or adult explanations. Unlike other activities that include directions, such as sports or video games, children only need to watch an adult doing something before beginning to imitate them."
+                android:justificationMode="inter_word"
+                android:textColor="@color/black"
+                style="@style/TextAppearance.Material3.TitleMedium"/>
+
+            <TextView android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="&#160;&#160;&#160;&#160;&#160;&#160;"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="Through ultrarealistic role-play, children learn about different careers, the inner-workings of a city and the concept of managing money. Each experience is designed to empower kids, giving them the confidence to be their best selves, and inspiration to be great global citizens. "
+                android:justificationMode="inter_word"
+                android:textColor="@color/black"
+                style="@style/TextAppearance.Material3.TitleMedium"/>
+
+            <TextView android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="&#160;&#160;&#160;&#160;&#160;&#160;"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="A doll is one of the best examples of role playing, since it represents a kid pretending to be a caring parent to their child. Role-playing is an essential ingredient in the concept’s experience."
+                android:justificationMode="inter_word"
+                android:textColor="@color/black"
+                style="@style/TextAppearance.Material3.TitleMedium"/>
+
+            <TextView android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="&#160;&#160;&#160;&#160;&#160;&#160;"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="Role-playing is not only a significant part of the KidZania essence, but an aspiration to take it to its maximum expression. This unique way of viewing role-play inspires us to build entire cities with buildings, city blocks, plazas and streets for children to play at being adults, with most of the different professions and trades available in a real one. "
+                android:justificationMode="inter_word"
+                android:textColor="@color/black"
+                style="@style/TextAppearance.Material3.TitleMedium"/>
+
+            <TextView android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="&#160;&#160;&#160;&#160;&#160;&#160;"/>
+
+
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:id="@+id/ct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/iv_logo1">
+
+            <TextView android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="&#160;&#160;&#160;&#160;&#160;&#160;"/>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center">
+
+
+                <ImageView
+                    android:id="@+id/ic_baseline_location_city_24"
+                    android:layout_width="133dp"
+                    android:layout_height="90dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white"
+                    android:src="@drawable/kz_logo" />
+
+                <TextView
+                    android:id="@+id/tv_ct"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="30dp"
+                    android:textSize="28dp"
+                    style="@style/TextAppearance.Material3.TitleMedium"
+                    android:text="A Complete City"
+                    android:textColor="@color/black"
+                    />
+
+            </GridLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/intro">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:justificationMode="inter_word"
+                android:text="The physical space in which every KidZania metropolis comes to life is a kid-sized fabricated replica of a typical city. The city plan is one big environment made up of many small environments replicating a thematic mix of industry sectors. This is where the city comes to life."
+                android:textColor="@color/black"
+                style="@style/TextAppearance.Material3.TitleMedium"/>
+
+            <TextView android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="&#160;&#160;&#160;&#160;&#160;&#160;"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="Role-play locations called “establishments” dominate the mix that includes its own Hospital, Police Station, Fire Station, Supermarket, Beauty Salon, Radio Station, Theater, just to mention a few. In addition, visitors will find Food and Beverage, Merchandising and Media dedicated locations, creating a broad offering of urban environments, establishments and activities to enjoy the complete KidZania experience."
+                android:justificationMode="inter_word"
+                android:textColor="@color/black"
+                style="@style/TextAppearance.Material3.TitleMedium"
+                />
+
+            <TextView android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="&#160;&#160;&#160;&#160;&#160;&#160;"/>
+
+            <Button
+                android:id="@+id/btn_ct"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                android:text="Scan to Pay"
+                style="@style/Widget.Material3.Button.IconButton.Outlined"
+                />
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:id="@+id/eco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/iv_logo1">
+
+            <TextView android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="&#160;&#160;&#160;&#160;&#160;&#160;"/>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center">
+
+
+                <ImageView
+                    android:id="@+id/ic_baseline_attach_money_24"
+                    android:layout_width="133dp"
+                    android:layout_height="90dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white"
+                    android:src="@drawable/kz_logo" />
+
+                <TextView
+                    android:id="@+id/tv_eco"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="30dp"
+                    android:textSize="28dp"
+                    style="@style/TextAppearance.Material3.TitleMedium"
+                    android:text="Economy"
+                    android:textColor="@color/black"
+                    />
+
+            </GridLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/intro">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:justificationMode="inter_word"
+                android:text="KidZania supports learning goals of financial literacy by contributing to a child’s understanding of the economic cycle. Each KidZania city operates with a proprietary currency, named “kidZo”, which enables participants to learn about monetary management by earning kidZos through employment, letting them acquire goods and services as customers, saving into bank accounts, investing long term, paying taxes and giving back to the community through donations."
+                android:textColor="@color/black"
+                style="@style/TextAppearance.Material3.TitleMedium"/>
+
+            <TextView android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="&#160;&#160;&#160;&#160;&#160;&#160;"/>
+
+
+
+            <Button
+                android:id="@+id/btn_eco"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                android:text="Learn More >"
+                style="@style/Widget.Material3.Button.IconButton.Outlined"
+                />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/exp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/iv_logo1">
+
+            <TextView android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="&#160;&#160;&#160;&#160;&#160;&#160;"/>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center">
+
+
+                <ImageView
+                    android:id="@+id/ic_baseline_setting_24"
+                    android:layout_width="133dp"
+                    android:layout_height="90dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white"
+                    android:src="@drawable/kz_logo" />
+
+                <TextView
+                    android:id="@+id/tv_exp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="30dp"
+                    android:textSize="28dp"
+                    style="@style/TextAppearance.Material3.TitleMedium"
+                    android:text="Experiential Learning"
+                    android:textColor="@color/black"
+                    />
+
+            </GridLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/intro">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:justificationMode="inter_word"
+                android:text="KidZania is about playful learning. Our pedagogical approach is through Experiential Learning, committed to encourage, develop and reinforce children’s expertise, skills and values through the medium of role-play, while providing learning and fun activities to children and taking as a basis that children “learn by doing”."
+                android:textColor="@color/black"
+                style="@style/TextAppearance.Material3.TitleMedium"/>
+
+            <TextView android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="&#160;&#160;&#160;&#160;&#160;&#160;"/>
+
+
+
+            <Button
+                android:id="@+id/btn_exp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                android:text="Learn More >"
+                style="@style/Widget.Material3.Button.IconButton.Outlined"
+                />
+
+            <TextView android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="&#160;&#160;&#160;&#160;&#160;&#160;"/>
+            <TextView android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="&#160;&#160;&#160;&#160;&#160;&#160;"/>
+
+
+        </LinearLayout>
+
+
+    </TableLayout>
+
+    </ScrollView>
+
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/container"
+        android:layout_above="@id/bottom_navigation"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="750dp"
+        android:id="@+id/bottom_navigation"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_nav_menu"
+        />
+
+
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nv_menu"
@@ -28,4 +538,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"/>
 
+
+
 </androidx.drawerlayout.widget.DrawerLayout>
+

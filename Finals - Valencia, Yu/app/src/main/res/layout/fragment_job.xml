@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".activities.JobFragment">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:stretchColumns="1">
+
+
+    <ImageView
+        android:id="@+id/iv_logo1"
+        android:layout_width="match_parent"
+        android:layout_height="136dp"
+        android:background="@color/white"
+        android:src="@drawable/kidzania_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/intro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/iv_logo1">
+
+
+        <TextView
+            android:id="@+id/act"
+            style="@style/TextAppearance.Material3.TitleMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:justificationMode="inter_word"
+            android:text="All Activities"
+            android:textAlignment="center"
+
+            android:textColor="@color/black"
+            android:textSize="38dp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="&#160;&#160;&#160;&#160;&#160;&#160;" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/intro">
+
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/acting" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Acting Academy"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                style="@style/TextAppearance.Material3.TitleMedium"/>
+
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/bank" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bank"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                style="@style/TextAppearance.Material3.TitleMedium"/>
+
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/cook" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cookery"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                style="@style/TextAppearance.Material3.TitleMedium"/>
+
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/bank" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Doctor"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                style="@style/TextAppearance.Material3.TitleMedium"/>
+
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/fire" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fireman"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                style="@style/TextAppearance.Material3.TitleMedium"/>
+
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/pilot" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pilot"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                style="@style/TextAppearance.Material3.TitleMedium"/>
+
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/rep" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TV Broadcaster/Reporter"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                style="@style/TextAppearance.Material3.TitleMedium"/>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="&#160;&#160;&#160;&#160;&#160;&#160;" />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="&#160;&#160;&#160;&#160;&#160;&#160;" />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="&#160;&#160;&#160;&#160;&#160;&#160;" />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="&#160;&#160;&#160;&#160;&#160;&#160;" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    </TableLayout>
+    </ScrollView>
+
+
+
+
+</FrameLayout>
