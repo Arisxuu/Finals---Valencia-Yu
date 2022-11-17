@@ -7,6 +7,7 @@ public class UserModel {
     public String address;
     public String collegeProgram;
     public String cash;
+    public String role;
     public UserModel() {
 
     }
@@ -18,11 +19,12 @@ public class UserModel {
         this.collegeProgram = collegeProgram;
     }*/
 
-    public UserModel(String name, String email, String address, String collegeProgram, String cash) {
+    public UserModel(String name, String email, String address, String collegeProgram, String cash, String role) {
         this.name = name;
         this.email = email;
         this.address = address;
         this.collegeProgram = collegeProgram;
         this.cash = cash;
+        this.role = role;
     }
 }

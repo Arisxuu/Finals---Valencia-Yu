@@ -115,7 +115,8 @@ public class SignUpActivity extends AppCompatActivity {
                 tilEmail.getEditText().getText().toString(),
                 tilAddress.getEditText().getText().toString(),
                 tilProgram.getEditText().getText().toString(),
-                "0");
+                "0",
+                "checked_out");
 
         String uid = user.getUid();
 

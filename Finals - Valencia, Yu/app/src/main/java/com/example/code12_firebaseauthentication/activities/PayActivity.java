@@ -25,7 +25,6 @@ public class PayActivity extends AppCompatActivity {
 
     private TextView tvRecipientName;
     private TextInputLayout tilInputPay;
-    private TextView tvCurrentCash;
     private Button btnPay;
 
     //For login logout
@@ -36,7 +35,6 @@ public class PayActivity extends AppCompatActivity {
     private DatabaseReference mRefSender;
 
     private Double doubleInputPay;
-    private Double doubleCurrentCash;
     private Double doubleRecipientCash;
 
     @Override
@@ -47,8 +45,6 @@ public class PayActivity extends AppCompatActivity {
         //Got receiver data from previous activity
         Intent intent = getIntent();
         String cashReceiver = intent.getStringExtra("cashReceiver");
-        //String userDisplayCash = intent.getStringExtra("userDisplayCash");
-        String userCash = intent.getStringExtra("userCash");
 
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
@@ -57,7 +53,6 @@ public class PayActivity extends AppCompatActivity {
 
         tvRecipientName = findViewById(R.id.tv_recipientName);
         tilInputPay = findViewById(R.id.til_inputPay);
-        tvCurrentCash = findViewById(R.id.tv_currentCash);
         btnPay = findViewById(R.id.btn_pay);
 
 
@@ -69,7 +64,6 @@ public class PayActivity extends AppCompatActivity {
                 //Get data from mRef, set data on payment activity
                 UserModel um = snapshot.getValue(UserModel.class);
                 tvRecipientName.setText(um.name);
-                tvCurrentCash.setText("Balance" + userCash);
                 doubleRecipientCash = Double.parseDouble(um.cash);
             }
 
@@ -97,18 +91,6 @@ public class PayActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 doubleInputPay = Double.parseDouble(tilInputPay.getEditText().getText().toString());
-                doubleCurrentCash = Double.parseDouble(userCash);
-
-                if(doubleInputPay > doubleCurrentCash)
-                {
-
-                    Toast.makeText(PayActivity.this, "Insufficient cash.", Toast.LENGTH_SHORT).show();
-                }
-
-                else
-                {
-                    doubleCurrentCash = doubleCurrentCash - doubleInputPay;
-                    mRefSender.child("cash").setValue(doubleCurrentCash.toString());
 
                     doubleRecipientCash = doubleRecipientCash + doubleInputPay;
                     mRefReceiver.child("cash").setValue(doubleRecipientCash.toString());
@@ -116,7 +98,6 @@ public class PayActivity extends AppCompatActivity {
 
                     startActivity(new Intent(PayActivity.this, ProfileActivity.class));
                     finish();
-                }
             }
         });
 

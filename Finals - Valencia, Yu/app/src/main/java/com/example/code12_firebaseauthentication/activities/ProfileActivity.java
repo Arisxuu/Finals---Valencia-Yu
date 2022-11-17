@@ -56,6 +56,8 @@ public class ProfileActivity extends AppCompatActivity {
     //To retrieve data from current user
     private FirebaseUser mUser;
     private DatabaseReference mRef;
+    //User role holder
+    private String role;
 
     //For Drawer Layout
     private DrawerLayout dlContent;
@@ -101,7 +103,7 @@ public class ProfileActivity extends AppCompatActivity {
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, dlContent, R.string.drawer_open, R.string.drawer_close);
         dlContent.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //Make drawer layout do something on click
         nav = findViewById(R.id.nv_menu);
@@ -164,6 +166,15 @@ public class ProfileActivity extends AppCompatActivity {
                 tvHeaderName.setText(um.name);
                 temp = "Cash: ₱ " + um.cash;
                 dltvCash.setText(temp);
+                role = um.role;
+
+                if (role.equals("checked_out")){
+                    startActivity(new Intent(ProfileActivity.this, CheckRoleActivity.class));
+                }
+                else if (role.equals("admin")){
+                    startActivity(new Intent(ProfileActivity.this, AdminActivity.class));
+                }
+
             }
 
             @Override
@@ -171,18 +182,6 @@ public class ProfileActivity extends AppCompatActivity {
 
             }
         });
-
-        //Scan QR code
-        /*IntentIntegrator qrScan = new IntentIntegrator(this);
-        btnScan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                qrScan.setPrompt("Scan");
-                qrScan.setCameraId(0); //0 - back cam, 1 - front cam
-                qrScan.setBeepEnabled(true); //pagkascan gagawa ng beep na sound
-                qrScan.initiateScan(); //starts the camera
-            }
-        });*/
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
@@ -223,30 +222,6 @@ public class ProfileActivity extends AppCompatActivity {
                 startActivity(new Intent(ProfileActivity.this, WebViewActivity.class));
             }
         });
-    }
-
-
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        IntentResult intentResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
-        if(intentResult != null){
-            if(intentResult.getContents() == null){
-                //TODO cancelled
-            }else {
-                //QR output nakukuha rito
-                //Toast.makeText(ProfileActivity.this, intentResult.getContents(), Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(ProfileActivity.this, PayActivity.class);
-                intent.putExtra("cashReceiver", intentResult.getContents());
-                startActivity(intent);
-
-            }
-        }else {
-            super.onActivityResult(requestCode, resultCode, data);
-        }
-
     }
 
     //Calls XML menu that we made, papunta activity
