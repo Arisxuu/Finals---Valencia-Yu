@@ -11,7 +11,7 @@ import com.example.code12_firebaseauthentication.R;
 
 public class SettingsActivity extends AppCompatActivity {
 
-    private Button buttonHome, buttonPass, buttonProfile;
+    private Button buttonHome, buttonPass, buttonEditProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +20,7 @@ public class SettingsActivity extends AppCompatActivity {
 
        buttonHome = findViewById(R.id.btn_home);
        buttonPass = findViewById(R.id.btn_pass);
-       buttonProfile = findViewById(R.id.btn_profile);
+       buttonEditProfile = findViewById(R.id.btn_profile);
 
 
 
@@ -33,10 +33,18 @@ public class SettingsActivity extends AppCompatActivity {
         });
 
         //Go to Edit Profile activity
-        buttonProfile.setOnClickListener(new View.OnClickListener() {
+        buttonEditProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SettingsActivity.this, EditProfileActivity.class));
+            }
+        });
+
+        //Go to change password activity
+        buttonPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SettingsActivity.this, ChangePasswordActivity.class));
             }
         });
 
