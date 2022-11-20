@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".activities.ContactUsActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:stretchColumns="1">
+
+
+            <ImageView
+                android:id="@+id/iv_logo1"
+                android:layout_width="match_parent"
+                android:layout_height="136dp"
+                android:background="@color/white"
+                android:src="@drawable/kidzania_logo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <LinearLayout
+                android:id="@+id/intro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                android:orientation="vertical"
+                android:background="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/iv_logo1">
+
+
+
+                <Button
+                    android:id="@+id/btn_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="24dp"
+                    android:text="Edit Profile"
+                    style="@style/Widget.Material3.Button.IconButton.Outlined"
+                    />
+
+                <Button
+                    android:id="@+id/btn_pass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="24dp"
+                    android:text="Change Password"
+                    style="@style/Widget.Material3.Button.IconButton.Outlined"
+                    />
+
+                <Button
+                    android:id="@+id/btn_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Home"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"/>
+
+
+            </LinearLayout>
+
+        </TableLayout>
+    </ScrollView>
+
+
+
+
+
+</RelativeLayout>
