@@ -80,8 +80,8 @@ public class SignInActivity extends AppCompatActivity {
                         }).addOnFailureListener(SignInActivity.this, new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                //Server errors
-                                //TODO
+                                Toast.makeText(SignInActivity.this, "Invalid credentials. Incorrect password.", Toast.LENGTH_SHORT).show();
+
                             }
                         });
             }
