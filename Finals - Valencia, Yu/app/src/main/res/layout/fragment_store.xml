@@ -42,25 +42,32 @@
                 app:layout_constraintTop_toBottomOf="@id/iv_logo1">
 
 
-                <TextView
-                    android:id="@+id/act"
-                    style="@style/TextAppearance.Material3.TitleMedium"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:justificationMode="inter_word"
-                    android:text="Store"
-                    android:textAlignment="center"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@id/intro">
 
-                    android:textColor="@color/black"
-                    android:textSize="38dp" />
 
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text="&#160;&#160;&#160;&#160;&#160;&#160;" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Ticket Price"
+                        android:textAlignment="center"
+                        android:paddingBottom="30dp"
+                        android:textSize="30dp"
+                        style="@style/TextAppearance.Material3.TitleMedium"/>
 
+                    <ImageView
+
+                        android:layout_width="358dp"
+                        android:layout_height="200dp"
+                        android:paddingBottom="30dp"
+                        android:src="@drawable/price" />
+
+
+
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -68,26 +75,41 @@
                     android:orientation="vertical"
                     app:layout_constraintTop_toBottomOf="@id/intro">
 
-                    <ImageView
-
-                        android:layout_width="358dp"
-                        android:layout_height="200dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginBottom="5dp"
-                        android:src="@drawable/price" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Ticket Price"
+                        android:text="Buy Stuff with Your KidZos!"
+                        android:paddingTop="20dp"
                         android:textAlignment="center"
-                        android:textSize="20dp"
+                        android:textSize="30dp"
                         style="@style/TextAppearance.Material3.TitleMedium"/>
+
+
+                    <ImageView
+
+                        android:layout_width="358dp"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:src="@drawable/kz_m2" />
+
+                    <ImageView
+
+                        android:layout_width="358dp"
+                        android:layout_height="200dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/kz_m1" />
 
 
                 </LinearLayout>
 
+
+
+
             </LinearLayout>
+
+
 
         </TableLayout>
     </ScrollView>

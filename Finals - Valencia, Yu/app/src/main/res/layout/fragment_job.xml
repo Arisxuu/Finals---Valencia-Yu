@@ -42,6 +42,30 @@
 
 
         <TextView
+            android:id="@+id/kzmap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.Material3.TitleMedium"
+            android:text="Kidzania Map"
+            android:textAlignment="center"
+            android:textSize="30dp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="25dp"
+            android:src="@drawable/kz_map" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="&#160;&#160;&#160;&#160;&#160;&#160;" />
+
+
+
+        <TextView
             android:id="@+id/act"
             style="@style/TextAppearance.Material3.TitleMedium"
             android:layout_width="match_parent"
@@ -51,14 +75,9 @@
             android:justificationMode="inter_word"
             android:text="All Activities"
             android:textAlignment="center"
-
             android:textColor="@color/black"
             android:textSize="38dp" />
 
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="&#160;&#160;&#160;&#160;&#160;&#160;" />
 
 
         <LinearLayout

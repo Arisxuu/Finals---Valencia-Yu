@@ -30,7 +30,7 @@ public class SignUpActivity extends AppCompatActivity {
     private TextInputLayout tilPassword;
     private TextInputLayout tilRepeatPassword;
     private TextInputLayout tilAddress;
-    private TextInputLayout tilProgram;
+    private TextInputLayout tilAge;
     private Button btnSignup;
 
     private FirebaseAuth mAuth;
@@ -45,7 +45,7 @@ public class SignUpActivity extends AppCompatActivity {
         tilPassword = findViewById(R.id.til_password);
         tilRepeatPassword = findViewById(R.id.til_repeat_password);
         tilAddress = findViewById(R.id.til_address);
-        tilProgram = findViewById(R.id.til_program);
+        tilAge = findViewById(R.id.til_age);
         btnSignup = findViewById(R.id.btn_signup);
 
         //For login & logout
@@ -114,7 +114,7 @@ public class SignUpActivity extends AppCompatActivity {
         UserModel um = new UserModel(tilName.getEditText().getText().toString(),
                 tilEmail.getEditText().getText().toString(),
                 tilAddress.getEditText().getText().toString(),
-                tilProgram.getEditText().getText().toString(),
+                tilAge.getEditText().getText().toString(),
                 "0",
                 "checked_out");
 
