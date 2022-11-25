@@ -68,6 +68,15 @@ public class AdminEntranceGuardActivity extends AppCompatActivity {
                 mRefReceiver.child("role").setValue("checked_in");
                 Toast.makeText(AdminEntranceGuardActivity.this, "Customer can go inside.", Toast.LENGTH_SHORT).show();
 
+                //Scan QR code
+                IntentIntegrator qrScan = new IntentIntegrator(this);
+                qrScan.setPrompt("Scan");
+                qrScan.setCameraId(0); //0 - back cam, 1 - front cam
+                qrScan.setBeepEnabled(true); //pagkascan gagawa ng beep na sound
+                qrScan.initiateScan(); //starts the camera
+
+
+
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data);

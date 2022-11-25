@@ -19,6 +19,13 @@
         android:theme="@style/Theme.Code12FirebaseAuthentication"
         tools:targetApi="31">
         <activity
+            android:name=".activities.HomeActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".activities.ChangePassword2Activity"
             android:exported="false">
             <meta-data
@@ -61,7 +68,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".activities.AdminActivity"
+            android:name=".activities.JobOwnerActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -104,13 +111,6 @@
         </activity>
         <activity
             android:name=".activities.PayActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".activities.QRActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

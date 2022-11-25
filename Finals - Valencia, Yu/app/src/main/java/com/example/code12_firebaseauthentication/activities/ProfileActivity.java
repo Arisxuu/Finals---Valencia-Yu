@@ -50,6 +50,7 @@ public class ProfileActivity extends AppCompatActivity {
     private Button btnProfile;
     private TextView tvProgram;
     private TextView tvUid;
+    private Button testing;
 
     //For login logout
     private FirebaseAuth mAuth;
@@ -131,11 +132,6 @@ public class ProfileActivity extends AppCompatActivity {
                         startActivity(intentS);
                         break;
 
-                    case R.id.item_showQR:
-                        Intent intentQR = new Intent(ProfileActivity.this, QRActivity.class);
-                        startActivity(intentQR);
-                        break;
-
                     case R.id.item_contactUs:
                         Intent intentC = new Intent(ProfileActivity.this, ContactUsActivity.class);
                         startActivity(intentC);
@@ -170,10 +166,18 @@ public class ProfileActivity extends AppCompatActivity {
 
                 if (role.equals("checked_out")){
                     startActivity(new Intent(ProfileActivity.this, CheckRoleActivity.class));
+                    finish();
                 }
-                else if (role.equals("admin")){
-                    startActivity(new Intent(ProfileActivity.this, AdminActivity.class));
+                else if (role.equals("admin_entrance")){
+                    startActivity(new Intent(ProfileActivity.this, AdminEntranceGuardActivity.class));
                 }
+                else if (role.equals("admin_exit")){
+                    startActivity(new Intent(ProfileActivity.this, AdminEntranceGuardActivity.class));
+                }
+                else if (role.equals("admin_jobOwner")){
+                    startActivity(new Intent(ProfileActivity.this, JobOwnerActivity.class));
+                }
+
 
             }
 

@@ -32,7 +32,7 @@ public class AdminExitGuardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_exit_guard);
 
-        btnScanForExit = findViewById(R.id.btn_scanForEntry);
+        btnScanForExit = findViewById(R.id.btn_scanForExit);
 
         //Scan QR code
         IntentIntegrator qrScan = new IntentIntegrator(this);
@@ -62,6 +62,13 @@ public class AdminExitGuardActivity extends AppCompatActivity {
                 mRefReceiver = FirebaseDatabase.getInstance().getReference("Users/" + intentResult.getContents());
                 mRefReceiver.child("role").setValue("checked_out");
                 Toast.makeText(AdminExitGuardActivity.this, "Customer is free to leave.", Toast.LENGTH_SHORT).show();
+
+                //Scan QR code
+                IntentIntegrator qrScan = new IntentIntegrator(this);
+                qrScan.setPrompt("Scan");
+                qrScan.setCameraId(0); //0 - back cam, 1 - front cam
+                qrScan.setBeepEnabled(true); //pagkascan gagawa ng beep na sound
+                qrScan.initiateScan(); //starts the camera
 
             }
         } else {

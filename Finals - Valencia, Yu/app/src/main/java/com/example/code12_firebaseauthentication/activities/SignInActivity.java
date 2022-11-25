@@ -69,7 +69,7 @@ public class SignInActivity extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if(task.isSuccessful()){
                                     //May laman na si firebase user pagpasok dito
-                                    startActivity(new Intent(SignInActivity.this, ProfileActivity.class));
+                                    startActivity(new Intent(SignInActivity.this, HomeActivity.class));
                                     finish();
 
                                 }else {
@@ -80,7 +80,7 @@ public class SignInActivity extends AppCompatActivity {
                         }).addOnFailureListener(SignInActivity.this, new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(SignInActivity.this, "Invalid credentials. Incorrect password.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SignInActivity.this, "Invalid credentials. Please try again.", Toast.LENGTH_SHORT).show();
 
                             }
                         });

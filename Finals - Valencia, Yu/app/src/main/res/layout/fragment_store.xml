@@ -99,7 +99,8 @@
                         android:layout_width="358dp"
                         android:layout_height="200dp"
                         android:layout_margin="10dp"
-                        android:src="@drawable/kz_m1" />
+                        android:src="@drawable/kz_m1"
+                        android:layout_gravity="center"/>
 
 
                 </LinearLayout>
