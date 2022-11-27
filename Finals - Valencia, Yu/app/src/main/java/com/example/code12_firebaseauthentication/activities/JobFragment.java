@@ -59,7 +59,7 @@ public class JobFragment extends Fragment {
                 localRef.getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
-                        Log.d("STORAGE_LIST","Uploaded");
+                        Toast.makeText(getActivity(),"Downloading, please check 'Kidzania' folder in your gallery in a while.",Toast.LENGTH_LONG).show();
                         //TODO
                     }
                 }).addOnFailureListener(new OnFailureListener() {
