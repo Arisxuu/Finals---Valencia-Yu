@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.code12_firebaseauthentication.R;
@@ -24,7 +25,7 @@ import com.google.zxing.integration.android.IntentResult;
 
 public class AdminEntranceGuardActivity extends AppCompatActivity {
 
-    private Button btnScanForEntry;
+    private TextView tvScanForEntry;
 
     //For login logout
     private FirebaseAuth mAuth;
@@ -37,11 +38,11 @@ public class AdminEntranceGuardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_entrance_guard);
 
-        btnScanForEntry = findViewById(R.id.btn_scanForEntry);
+        tvScanForEntry = findViewById(R.id.tv_scanForEntry);
 
         //Scan QR code
         IntentIntegrator qrScan = new IntentIntegrator(this);
-        btnScanForEntry.setOnClickListener(new View.OnClickListener() {
+        tvScanForEntry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 qrScan.setPrompt("Scan");

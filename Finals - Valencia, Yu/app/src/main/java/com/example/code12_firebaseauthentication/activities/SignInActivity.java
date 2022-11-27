@@ -69,7 +69,7 @@ public class SignInActivity extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if(task.isSuccessful()){
                                     //May laman na si firebase user pagpasok dito
-                                    startActivity(new Intent(SignInActivity.this, HomeActivity.class));
+                                    startActivity(new Intent(SignInActivity.this, ProfileActivity.class));
                                     finish();
 
                                 }else {

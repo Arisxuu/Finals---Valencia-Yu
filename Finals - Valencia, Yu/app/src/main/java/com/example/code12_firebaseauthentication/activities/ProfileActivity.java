@@ -104,7 +104,7 @@ public class ProfileActivity extends AppCompatActivity {
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, dlContent, R.string.drawer_open, R.string.drawer_close);
         dlContent.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //Make drawer layout do something on click
         nav = findViewById(R.id.nv_menu);
