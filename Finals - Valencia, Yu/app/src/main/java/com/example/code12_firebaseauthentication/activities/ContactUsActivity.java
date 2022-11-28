@@ -26,7 +26,7 @@ public class ContactUsActivity extends AppCompatActivity {
         buttonHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ContactUsActivity.this, ProfileActivity.class));
+                startActivity(new Intent(ContactUsActivity.this, HomeActivity.class));
             }
         });
     }

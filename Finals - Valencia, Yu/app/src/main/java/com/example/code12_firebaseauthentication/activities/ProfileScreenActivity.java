@@ -104,7 +104,7 @@ public class ProfileScreenActivity extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ProfileScreenActivity.this,ProfileActivity.class));
+                startActivity(new Intent(ProfileScreenActivity.this,HomeActivity.class));
             }
         });
 

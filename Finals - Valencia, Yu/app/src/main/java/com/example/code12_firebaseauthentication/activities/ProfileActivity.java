@@ -132,6 +132,11 @@ public class ProfileActivity extends AppCompatActivity {
                         startActivity(intentS);
                         break;
 
+                    case R.id.item_aboutUs:
+                        Intent intentU = new Intent(ProfileActivity.this, ProfileActivity.class);
+                        startActivity(intentU);
+                        break;
+
                     case R.id.item_contactUs:
                         Intent intentC = new Intent(ProfileActivity.this, ContactUsActivity.class);
                         startActivity(intentC);
