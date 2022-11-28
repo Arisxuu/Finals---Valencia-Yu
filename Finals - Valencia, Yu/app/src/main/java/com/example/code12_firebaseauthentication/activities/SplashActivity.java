@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import com.example.code12_firebaseauthentication.R;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class SplashActivity extends AppCompatActivity {
@@ -29,7 +28,7 @@ public class SplashActivity extends AppCompatActivity {
             public void run() {
                 if(mUser != null){
                     //user is still logged in
-                    startActivity(new Intent(SplashActivity.this, ProfileActivity.class));
+                    startActivity(new Intent(SplashActivity.this, AboutUsActivity.class));
                     finish();
                 }else {
                     //user is not logged in, show login screen

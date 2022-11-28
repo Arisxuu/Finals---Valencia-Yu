@@ -62,7 +62,7 @@ public class CheckRoleActivity extends AppCompatActivity {
                 role = um.role;
 
                 if (role.equals("checked_in")){
-                    startActivity(new Intent(CheckRoleActivity.this, ProfileActivity.class));
+                    startActivity(new Intent(CheckRoleActivity.this, HomeActivity.class));
                     Toast.makeText(CheckRoleActivity.this, "Successfully verified. You may now enter.", Toast.LENGTH_LONG).show();
                     finish();
                 } else {

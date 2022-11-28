@@ -16,7 +16,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 public class ChangePassword2Activity extends AppCompatActivity {
 
@@ -50,7 +49,7 @@ public class ChangePassword2Activity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()) {
                                 Toast.makeText(ChangePassword2Activity.this, "Password has been changed successfully.", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(ChangePassword2Activity.this, ProfileActivity.class));
+                                startActivity(new Intent(ChangePassword2Activity.this, AboutUsActivity.class));
                                 finish();
                             } else {
                                 Toast.makeText(ChangePassword2Activity.this, "An error has occured, please try again.", Toast.LENGTH_SHORT).show();

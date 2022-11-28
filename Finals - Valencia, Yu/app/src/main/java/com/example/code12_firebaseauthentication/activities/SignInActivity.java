@@ -28,7 +28,6 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 public class SignInActivity extends AppCompatActivity {
@@ -130,7 +129,7 @@ public class SignInActivity extends AppCompatActivity {
         mAuth.signInWithCredential(authCredential).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override
             public void onSuccess(AuthResult authResult) {
-                startActivity(new Intent(SignInActivity.this, ProfileActivity.class));
+                startActivity(new Intent(SignInActivity.this, AboutUsActivity.class));
                 finish();
             }
         }).addOnFailureListener(new OnFailureListener() {

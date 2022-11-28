@@ -58,8 +58,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="24dp"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
         <ImageView
             android:id="@+id/iv_homeQR"
@@ -68,8 +67,6 @@
             android:layout_gravity="center"
             android:background="@color/black"
             android:src="@drawable/ic_android_white_24dp"/>
-
-
 
         <TextView
             android:id="@+id/tv_homeName"
@@ -88,9 +85,35 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
             android:text="Cash"
             android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tv_homeEmail"
+            style="@style/TextAppearance.Material3.TitleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="E-Mail"/>
+
+        <TextView
+            android:id="@+id/tv_homeBirthday"
+            style="@style/TextAppearance.Material3.TitleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Birthday"/>
+
+        <TextView
+            android:id="@+id/tv_homeUID"
+            style="@style/TextAppearance.Material3.TitleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Passport UID"/>
+
+
+
 
     </LinearLayout>
 

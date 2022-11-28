@@ -137,7 +137,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".activities.ProfileActivity"
+            android:name=".activities.AboutUsActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

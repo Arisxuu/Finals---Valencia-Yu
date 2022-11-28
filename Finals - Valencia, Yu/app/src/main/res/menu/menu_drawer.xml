@@ -20,12 +20,6 @@
                 android:icon="@drawable/ic_baseline_settings_24"/>
 
             <item
-                android:id="@+id/item_showQR"
-                android:title="Show QR"
-                android:checkable="true"
-                android:icon="@drawable/ic_baseline_qr_code_24"/>
-
-            <item
                 android:id="@+id/item_aboutUs"
                 android:title="About Us"
                 android:checkable="true"
