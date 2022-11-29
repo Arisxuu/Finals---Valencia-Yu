@@ -33,7 +33,7 @@ import com.google.zxing.common.BitMatrix;
 public class HomeActivity extends AppCompatActivity {
 
     private ImageView ivQR;
-    private TextView tvHomeName, tvHomeCash, tvHomeEmail, tvHomeBirthday, tvHomeUID;
+    private TextView tvHomeName, tvHomeCash, tvHomeEmail, tvHomeBirthday, tvHomeUID, tvHomeAddress;
 
     //For login logout
     private FirebaseAuth mAuth;
@@ -91,8 +91,10 @@ public class HomeActivity extends AppCompatActivity {
         tvHomeName = findViewById(R.id.tv_homeName);
         tvHomeCash = findViewById(R.id.tv_homeCash);
         tvHomeEmail = findViewById(R.id.tv_homeEmail);
+        tvHomeAddress = findViewById(R.id.tv_homeAddress);
         tvHomeBirthday = findViewById(R.id.tv_homeBirthday);
         tvHomeUID = findViewById(R.id.tv_homeUID);
+
 
         nav.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -152,6 +154,7 @@ public class HomeActivity extends AppCompatActivity {
                 temp = "Cash: ₱ " + um.cash;
                 tvHomeCash.setText(temp);
                 tvHomeEmail.setText(um.email);
+                tvHomeAddress.setText(um.address);
                 tvHomeBirthday.setText(um.birthday);
                 tvHomeUID.setText(mUser.getUid().toString());
 
