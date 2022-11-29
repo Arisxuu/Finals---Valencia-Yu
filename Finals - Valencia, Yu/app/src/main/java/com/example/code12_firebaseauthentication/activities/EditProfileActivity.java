@@ -3,10 +3,12 @@ package com.example.code12_firebaseauthentication.activities;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,12 +25,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Calendar;
+
 public class EditProfileActivity extends AppCompatActivity {
 
     private EditText etName;
     private EditText etEmail;
     private EditText etAddress;
-    private Button btnSave;
+    private EditText etBirthday;
+    private Button btnChangeBday, btnSave;
 
 
     //For login logout
@@ -49,6 +54,8 @@ public class EditProfileActivity extends AppCompatActivity {
         etName = findViewById(R.id.et_name);
         etEmail = findViewById(R.id.et_email);
         etAddress = findViewById(R.id.et_address);
+        etBirthday = findViewById(R.id.et_epBirthday);
+        btnChangeBday = findViewById(R.id.btn_epBirthdayPicker);
         btnSave = findViewById(R.id.btn_save);
 
         mRef.addValueEventListener(new ValueEventListener() {
@@ -59,11 +66,32 @@ public class EditProfileActivity extends AppCompatActivity {
                 etName.setText(um.name);
                 etEmail.setText(um.email);
                 etAddress.setText(um.address);
+                etBirthday.setText(um.birthday);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
+
+        btnChangeBday.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final Calendar c = Calendar.getInstance();
+                int year = c.get(Calendar.YEAR);
+                int month = c.get(Calendar.MONTH);
+                int day = c.get(Calendar.DAY_OF_MONTH);
+
+                DatePickerDialog datePickerDialog = new DatePickerDialog(EditProfileActivity.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
+                        //Toast.makeText(SignUpActivity.this, i + ", " + i1 + ", " + i2, Toast.LENGTH_SHORT).show();
+                        etBirthday.setText(i1 + 1 + "/" + i2 + "/" + i);
+                    }
+                }, year, month, day);
+
+                datePickerDialog.show();
             }
         });
 
@@ -75,6 +103,7 @@ public class EditProfileActivity extends AppCompatActivity {
                     mRef.child("name").setValue(etName.getText().toString());
                     mRef.child("address").setValue(etAddress.getText().toString());
                     mRef.child("email").setValue(etEmail.getText().toString());
+                    mRef.child("birthday").setValue(etBirthday.getText().toString());
 
                     mUser.updateEmail(etEmail.getText().toString())
                                     .addOnCompleteListener(new OnCompleteListener<Void>() {
