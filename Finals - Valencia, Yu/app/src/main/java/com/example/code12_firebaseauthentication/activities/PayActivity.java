@@ -96,7 +96,7 @@ public class PayActivity extends AppCompatActivity {
                     mRefReceiver.child("cash").setValue(doubleRecipientCash.toString());
                     Toast.makeText(PayActivity.this, "Payment has been sent.", Toast.LENGTH_SHORT).show();
 
-                    startActivity(new Intent(PayActivity.this, AboutUsActivity.class));
+                    startActivity(new Intent(PayActivity.this, HomeActivity.class));
                     finish();
             }
         });

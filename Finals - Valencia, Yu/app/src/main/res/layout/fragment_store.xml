@@ -35,7 +35,8 @@
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:orientation="vertical"
-                android:background="#F2F2F2">
+                android:background="#F2F2F2"
+                android:layout_marginTop="20dp">
 
                 <ImageView
                     android:layout_width="match_parent"

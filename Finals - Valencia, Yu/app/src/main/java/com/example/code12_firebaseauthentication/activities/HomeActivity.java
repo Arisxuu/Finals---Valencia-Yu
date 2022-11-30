@@ -150,7 +150,7 @@ public class HomeActivity extends AppCompatActivity {
 
                 //Sets data on passport
                 tvHomeName.setText(um.name);
-                temp = "Cash: ₱ " + um.cash;
+                temp = "₱ " + um.cash;
                 tvHomeCash.setText(temp);
                 tvHomeAddress.setText(um.address);
                 tvHomeBirthday.setText(um.birthday);
@@ -168,7 +168,7 @@ public class HomeActivity extends AppCompatActivity {
                     startActivity(new Intent(HomeActivity.this, AdminEntranceGuardActivity.class));
                 }
                 else if (role.equals("admin_jobOwner")){
-                    startActivity(new Intent(HomeActivity.this, JobOwnerActivity.class));
+                    startActivity(new Intent(HomeActivity.this, AdminJobOwnerActivity.class));
                 }
 
             }
