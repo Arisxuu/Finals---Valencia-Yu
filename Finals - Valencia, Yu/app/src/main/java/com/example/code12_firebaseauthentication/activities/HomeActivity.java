@@ -77,7 +77,7 @@ public class HomeActivity extends AppCompatActivity {
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, dlContent, R.string.drawer_open, R.string.drawer_close);
         dlContent.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //Make drawer layout do something on click
         nav = findViewById(R.id.nv_menu);
@@ -169,6 +169,9 @@ public class HomeActivity extends AppCompatActivity {
                 }
                 else if (role.equals("admin_jobOwner")){
                     startActivity(new Intent(HomeActivity.this, AdminJobOwnerActivity.class));
+                }
+                else if (role.equals("admin_giftShop")){
+                    startActivity(new Intent(HomeActivity.this, AdminGiftShopActivity.class));
                 }
 
             }
