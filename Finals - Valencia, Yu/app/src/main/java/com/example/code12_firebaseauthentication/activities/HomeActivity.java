@@ -90,7 +90,6 @@ public class HomeActivity extends AppCompatActivity {
         ivQR = findViewById(R.id.iv_homeQR);
         tvHomeName = findViewById(R.id.tv_homeName);
         tvHomeCash = findViewById(R.id.tv_homeCash);
-        tvHomeEmail = findViewById(R.id.tv_homeEmail);
         tvHomeAddress = findViewById(R.id.tv_homeAddress);
         tvHomeBirthday = findViewById(R.id.tv_homeBirthday);
         tvHomeUID = findViewById(R.id.tv_homeUID);
@@ -153,7 +152,6 @@ public class HomeActivity extends AppCompatActivity {
                 tvHomeName.setText(um.name);
                 temp = "Cash: ₱ " + um.cash;
                 tvHomeCash.setText(temp);
-                tvHomeEmail.setText(um.email);
                 tvHomeAddress.setText(um.address);
                 tvHomeBirthday.setText(um.birthday);
                 tvHomeUID.setText(mUser.getUid().toString());

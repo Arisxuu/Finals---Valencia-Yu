@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/passport_texture"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".activities.JobFragment">
 
@@ -25,282 +25,414 @@
         android:id="@+id/iv_logo1"
         android:layout_width="match_parent"
         android:layout_height="136dp"
-        android:background="@color/white"
+        android:background="@drawable/passport_texture"
         android:src="@drawable/kidzania_logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <LinearLayout
-        android:id="@+id/intro"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="24dp"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@id/iv_logo1">
-
-
-        <TextView
-            android:id="@+id/kzmap"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/TextAppearance.Material3.TitleMedium"
-            android:text="Kidzania Map"
-            android:textAlignment="center"
-            android:textSize="30dp"/>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="200dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="25dp"
-            android:src="@drawable/kz_map" />
-
-        <Button
-            android:id="@+id/btn_downloadMap"
-            android:layout_width="200dp"
-            android:layout_height="40dp"
-            android:text="Download the map!"
-            android:layout_gravity="center"
-            />
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="&#160;&#160;&#160;&#160;&#160;&#160;" />
-
-
-
-        <TextView
-            android:id="@+id/act"
-            style="@style/TextAppearance.Material3.TitleMedium"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:justificationMode="inter_word"
-            android:text="All Activities"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="38dp" />
-
-
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:background="@xml/textview_border"
             android:orientation="vertical"
-            app:layout_constraintTop_toBottomOf="@id/intro">
+            app:layout_constraintTop_toBottomOf="@id/iv_logo1">
+
+
+            <TextView
+                android:id="@+id/kzmap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.Material3.TitleMedium"
+                android:text="Kidzania Map"
+                android:textAlignment="center"
+                android:textSize="30dp"/>
 
             <ImageView
-
                 android:layout_width="wrap_content"
                 android:layout_height="200dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
-                android:layout_marginBottom="5dp"
+                android:layout_marginBottom="25dp"
+                android:src="@drawable/kz_map" />
+
+            <Button
+                android:id="@+id/btn_downloadMap"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:text="Download the map!"
+                android:layout_gravity="center"
+                />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="&#160;&#160;&#160;&#160;&#160;&#160;" />
+
+
+
+        </LinearLayout>
+
+
+                <TextView
+                    style="@style/TextAppearance.Material3.TitleLarge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:text="Careers Available"
+                    android:textAlignment="center"
+                    android:textColor="#ba4063"
+                    android:textSize="25dp"
+                    android:textStyle="bold"
+                    android:id="@+id/intro"/>
+
+
+        <LinearLayout
+            android:id="@+id/acting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="0dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/intro">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="20dp"
                 android:src="@drawable/acting" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="14"
-                android:textColor="@color/white"
-                android:background="@drawable/textview_circle"
-                android:textAlignment="center"
-                android:textSize="20dp"
-                style="@style/TextAppearance.Material3.TitleMedium"/>
+                android:background="@color/white"
+                android:text="Acting Academy (14)"
+                android:textColor="@color/black"
+                android:textSize="24dp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Acting Academy"
-                android:textAlignment="center"
-                android:textSize="20dp"
-                style="@style/TextAppearance.Material3.TitleMedium"/>
+                android:background="@color/white"
+                android:paddingBottom="10dp"
+                android:text="₱500/Session"
+                android:textColor="@color/green"
+                android:textSize="24dp" />
+
+            <TextView
+                style="@style/TextAppearance.Material3.TitleMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:justificationMode="inter_word"
+                android:text="-Want to act out a character? Come to our Acting Academy and be an actor or actress."
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:background="@color/white"
+                android:drawableLeft="@drawable/ic_baseline_access_time_24"
+                android:drawablePadding="2dp"
+                android:text="30 min"
+                android:textColor="@color/black"
+                android:textSize="24dp" />
+
+
+        </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/banking"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/acting">
 
             <ImageView
-
-                android:layout_width="wrap_content"
-                android:layout_height="200dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginBottom="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_vertical"
                 android:src="@drawable/bank" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="41"
-                android:textColor="@color/white"
-                android:background="@drawable/textview_circle"
-                android:textAlignment="center"
-                android:textSize="20dp"
-                style="@style/TextAppearance.Material3.TitleMedium"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Bank"
-                android:textAlignment="center"
-                android:textSize="20dp"
-                style="@style/TextAppearance.Material3.TitleMedium"/>
+                android:text="Bank (41)"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:textSize="24dp"
+                />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:paddingBottom="10dp"
+                    android:text="₱450/Session"
+                    android:textColor="@color/green"
+                    android:textSize="24dp" />
+
+                <TextView
+                    style="@style/TextAppearance.Material3.TitleMedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:justificationMode="inter_word"
+                    android:text="- Our business is to keep your kidZos safe! At our bank you can open an account, receive your personalized debit card, manage your savings and investments, and make deposits and withdrawals. "
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:background="@color/white"
+                    android:drawableLeft="@drawable/ic_baseline_access_time_24"
+                    android:drawablePadding="2dp"
+                    android:text="20 min"
+                    android:textColor="@color/black"
+                    android:textSize="24dp" />
+
+
+
+
+            </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/cook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/banking">
 
             <ImageView
-
-                android:layout_width="wrap_content"
-                android:layout_height="200dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginBottom="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_vertical"
                 android:src="@drawable/cook" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="3"
-                android:textColor="@color/white"
-                android:background="@drawable/textview_circle"
-                android:textAlignment="center"
-                android:textSize="20dp"
-                style="@style/TextAppearance.Material3.TitleMedium"/>
+                android:text="Cook (3)"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:textSize="24dp"
+                />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Cookery"
-                android:textAlignment="center"
-                android:textSize="20dp"
-                style="@style/TextAppearance.Material3.TitleMedium"/>
+                android:background="@color/white"
+                android:paddingBottom="10dp"
+                android:text="₱300/Session"
+                android:textColor="@color/green"
+                android:textSize="24dp" />
 
-            <ImageView
-
-                android:layout_width="wrap_content"
-                android:layout_height="200dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginBottom="5dp"
-                android:src="@drawable/doctor" />
             <TextView
+                style="@style/TextAppearance.Material3.TitleMedium"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="12 - 33 - 34 - 35 - 46"
-                android:textColor="@color/white"
-                android:background="@drawable/textview_circle"
-                android:textAlignment="center"
-                android:textSize="20dp"
-                style="@style/TextAppearance.Material3.TitleMedium"/>
+                android:background="@color/white"
+                android:justificationMode="inter_word"
+                android:text="- Spend your time working in the kitchen"
+                android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Doctor"
-                android:textAlignment="center"
-                android:textSize="20dp"
-                style="@style/TextAppearance.Material3.TitleMedium"/>
-
-            <ImageView
-
-                android:layout_width="wrap_content"
-                android:layout_height="200dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginBottom="5dp"
-                android:src="@drawable/fire" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="36"
-                android:textColor="@color/white"
-                android:background="@drawable/textview_circle"
-                android:textAlignment="center"
-                android:textSize="20dp"
-                style="@style/TextAppearance.Material3.TitleMedium"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Fireman"
-                android:textAlignment="center"
-                android:textSize="20dp"
-                style="@style/TextAppearance.Material3.TitleMedium"/>
-
-            <ImageView
-
-                android:layout_width="wrap_content"
-                android:layout_height="200dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginBottom="5dp"
-                android:src="@drawable/pilot" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="7"
-                android:textColor="@color/white"
-                android:background="@drawable/textview_circle"
-                android:textAlignment="center"
-                android:textSize="20dp"
-                style="@style/TextAppearance.Material3.TitleMedium"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Pilot"
-                android:textAlignment="center"
-                android:textSize="20dp"
-                style="@style/TextAppearance.Material3.TitleMedium"/>
-
-            <ImageView
-
-                android:layout_width="wrap_content"
-                android:layout_height="200dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginBottom="5dp"
-                android:src="@drawable/rep" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="31"
-                android:textColor="@color/white"
-                android:background="@drawable/textview_circle"
-                android:textAlignment="center"
-                android:textSize="20dp"
-                style="@style/TextAppearance.Material3.TitleMedium"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="TV Broadcaster/Reporter"
-                android:textAlignment="center"
-                android:textSize="20dp"
-                style="@style/TextAppearance.Material3.TitleMedium"/>
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="&#160;&#160;&#160;&#160;&#160;&#160;" />
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="&#160;&#160;&#160;&#160;&#160;&#160;" />
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="&#160;&#160;&#160;&#160;&#160;&#160;" />
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:text="&#160;&#160;&#160;&#160;&#160;&#160;" />
+                android:layout_marginBottom="30dp"
+                android:background="@color/white"
+                android:drawableLeft="@drawable/ic_baseline_access_time_24"
+                android:drawablePadding="2dp"
+                android:text="20 min"
+                android:textColor="@color/black"
+                android:textSize="24dp" />
 
 
         </LinearLayout>
 
-    </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/fire"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/cook">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/fire" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fireman (7)"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:textSize="24dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingBottom="10dp"
+                android:text="₱300/Session"
+                android:textColor="@color/green"
+                android:textSize="24dp" />
+
+            <TextView
+                style="@style/TextAppearance.Material3.TitleMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:justificationMode="inter_word"
+                android:text="- Children will work together to become firefighters who save the City of KidZania from a fire in a building."
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:background="@color/white"
+                android:drawableLeft="@drawable/ic_baseline_access_time_24"
+                android:drawablePadding="2dp"
+                android:text="20 min"
+                android:textColor="@color/black"
+                android:textSize="24dp" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/pilot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/fire">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/pilot" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pilot (7)"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:textSize="24dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingBottom="10dp"
+                android:text="₱400/Session"
+                android:textColor="@color/green"
+                android:textSize="24dp" />
+
+            <TextView
+                style="@style/TextAppearance.Material3.TitleMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:justificationMode="inter_word"
+                android:text="- Learn to plan their flights by checking that the aircraft is operable and safe, that the cargo has been loaded correctly, and that weather conditions are acceptable."
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:background="@color/white"
+                android:drawableLeft="@drawable/ic_baseline_access_time_24"
+                android:drawablePadding="2dp"
+                android:text="15 min"
+                android:textColor="@color/black"
+                android:textSize="24dp" />
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:id="@+id/tvRep"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/pilot">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/rep" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TV Reporter (31)"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:textSize="24dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingBottom="10dp"
+                android:text="₱300/Session"
+                android:textColor="@color/green"
+                android:textSize="24dp" />
+
+            <TextView
+                style="@style/TextAppearance.Material3.TitleMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:justificationMode="inter_word"
+                android:text="- Kids will know the process and behind the scene of tv program."
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:background="@color/white"
+                android:drawableLeft="@drawable/ic_baseline_access_time_24"
+                android:drawablePadding="2dp"
+                android:text="35 min"
+                android:textColor="@color/black"
+                android:textSize="24dp" />
+
+
+        </LinearLayout>
+
+
+
 
     </TableLayout>
     </ScrollView>
