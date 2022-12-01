@@ -46,6 +46,11 @@ public class ChangePasswordActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
 
+        //Removes action bar
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
         btncpChangePw.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

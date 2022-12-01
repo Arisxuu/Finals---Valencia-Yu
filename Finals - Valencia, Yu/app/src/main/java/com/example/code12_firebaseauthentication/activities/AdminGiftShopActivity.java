@@ -22,6 +22,11 @@ public class AdminGiftShopActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_gift_shop);
 
+        //Removes action bar
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
         tvPayCashier = findViewById(R.id.tv_scanCashier);
 
         //Scan QR code

@@ -23,6 +23,10 @@ public class SettingsActivity extends AppCompatActivity {
        buttonEditProfile = findViewById(R.id.btn_profile);
 
 
+        //Removes action bar
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
 
         //Go to Profile activity
         buttonHome.setOnClickListener(new View.OnClickListener() {

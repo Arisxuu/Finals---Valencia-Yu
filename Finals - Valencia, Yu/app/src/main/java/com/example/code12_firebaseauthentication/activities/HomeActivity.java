@@ -14,6 +14,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.code12_firebaseauthentication.R;
+import com.example.code12_firebaseauthentication.fragments.HomeFragment;
+import com.example.code12_firebaseauthentication.fragments.JobFragment;
+import com.example.code12_firebaseauthentication.fragments.StoreFragment;
 import com.example.code12_firebaseauthentication.models.UserModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -67,7 +70,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         //set text in action bar
-        setTitle("Kidzania");
+        //setTitle("Kidzania");
 
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
@@ -77,7 +80,7 @@ public class HomeActivity extends AppCompatActivity {
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, dlContent, R.string.drawer_open, R.string.drawer_close);
         dlContent.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //Make drawer layout do something on click
         nav = findViewById(R.id.nv_menu);
@@ -99,11 +102,6 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch(item.getItemId()){
-                    case R.id.item_profile:
-                        Intent intent = new Intent(HomeActivity.this, ProfileScreenActivity.class);
-                        startActivity(intent);
-                        break;
-
                     case R.id.item_settings:
                         Intent intentS = new Intent(HomeActivity.this, SettingsActivity.class);
                         startActivity(intentS);
@@ -195,11 +193,6 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch(item.getItemId()){
-                    case R.id.item_profile:
-                        Intent intent = new Intent(HomeActivity.this, ProfileScreenActivity.class);
-                        startActivity(intent);
-                        break;
-
                     case R.id.item_settings:
                         Intent intentS = new Intent(HomeActivity.this, SettingsActivity.class);
                         startActivity(intentS);

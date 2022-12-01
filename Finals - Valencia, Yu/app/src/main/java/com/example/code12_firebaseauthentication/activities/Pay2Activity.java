@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -12,6 +14,7 @@ import android.widget.Toast;
 
 import com.example.code12_firebaseauthentication.R;
 import com.example.code12_firebaseauthentication.models.UserModel;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -23,8 +26,9 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Pay2Activity extends AppCompatActivity {
 
-    private TextView tvRecipientName;
+    private TextView tvRecipientName, tvProductID, tvProductWatch, tvProductBallpen, tvProductNotebook;
     private TextInputLayout tilInputPay;
+    private TextInputEditText tietInputPay;
     private Button btnPay;
 
     //For login logout
@@ -36,6 +40,8 @@ public class Pay2Activity extends AppCompatActivity {
 
     private Double doubleInputPay;
     private Double doubleRecipientCash;
+
+    private double doubleTotalBill;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +61,10 @@ public class Pay2Activity extends AppCompatActivity {
         tilInputPay = findViewById(R.id.til_inputPay);
         btnPay = findViewById(R.id.btn_pay);
 
+        tvProductID = findViewById(R.id.tv_productID);
+        tvProductWatch = findViewById(R.id.tv_productWatch);
+        tvProductBallpen = findViewById(R.id.tv_productBallpen);
+        tvProductNotebook = findViewById(R.id.tv_productNotebook);
 
         //getter setter of data from firebase, not limited
         mRefReceiver.addValueEventListener(new ValueEventListener() {
@@ -97,6 +107,98 @@ public class Pay2Activity extends AppCompatActivity {
 
                 startActivity(new Intent(Pay2Activity.this, HomeActivity.class));
                 finish();
+            }
+        });
+
+        tvProductID.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (TextUtils.isEmpty(tilInputPay.getEditText().getText().toString()))
+                {
+                    Double totalBill = Double.parseDouble("0");
+                    totalBill = totalBill + 150;
+
+                    tilInputPay.getEditText().setText(totalBill.toString());
+                    Toast.makeText(Pay2Activity.this, tilInputPay.getEditText().getText().toString(), Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    Double totalBill = Double.parseDouble(tilInputPay.getEditText().getText().toString());
+                    totalBill = totalBill + 150;
+
+                    tilInputPay.getEditText().setText(totalBill.toString());
+                    Toast.makeText(Pay2Activity.this, tilInputPay.getEditText().getText().toString(), Toast.LENGTH_SHORT).show();
+                }
+                //Toast.makeText(Pay2Activity.this, "Customer has been charged.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        tvProductWatch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (TextUtils.isEmpty(tilInputPay.getEditText().getText().toString()))
+                {
+                    Double totalBill = Double.parseDouble("0");
+                    totalBill = totalBill + 250;
+
+                    tilInputPay.getEditText().setText(totalBill.toString());
+                    Toast.makeText(Pay2Activity.this, tilInputPay.getEditText().getText().toString(), Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    Double totalBill = Double.parseDouble(tilInputPay.getEditText().getText().toString());
+                    totalBill = totalBill + 250;
+
+                    tilInputPay.getEditText().setText(totalBill.toString());
+                    Toast.makeText(Pay2Activity.this, tilInputPay.getEditText().getText().toString(), Toast.LENGTH_SHORT).show();
+                }
+                //Toast.makeText(Pay2Activity.this, "Customer has been charged.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        tvProductBallpen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (TextUtils.isEmpty(tilInputPay.getEditText().getText().toString()))
+                {
+                    Double totalBill = Double.parseDouble("0");
+                    totalBill = totalBill + 120;
+
+                    tilInputPay.getEditText().setText(totalBill.toString());
+                    Toast.makeText(Pay2Activity.this, tilInputPay.getEditText().getText().toString(), Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    Double totalBill = Double.parseDouble(tilInputPay.getEditText().getText().toString());
+                    totalBill = totalBill + 120;
+
+                    tilInputPay.getEditText().setText(totalBill.toString());
+                    Toast.makeText(Pay2Activity.this, tilInputPay.getEditText().getText().toString(), Toast.LENGTH_SHORT).show();
+                }
+                //Toast.makeText(Pay2Activity.this, "Customer has been charged.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        tvProductNotebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (TextUtils.isEmpty(tilInputPay.getEditText().getText().toString()))
+                {
+                    Double totalBill = Double.parseDouble("0");
+                    totalBill = totalBill + 100;
+
+                    tilInputPay.getEditText().setText(totalBill.toString());
+                    Toast.makeText(Pay2Activity.this, tilInputPay.getEditText().getText().toString(), Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    Double totalBill = Double.parseDouble(tilInputPay.getEditText().getText().toString());
+                    totalBill = totalBill + 100;
+
+                    tilInputPay.getEditText().setText(totalBill.toString());
+                    Toast.makeText(Pay2Activity.this, tilInputPay.getEditText().getText().toString(), Toast.LENGTH_SHORT).show();
+                }
+                //Toast.makeText(Pay2Activity.this, "Customer has been charged.", Toast.LENGTH_SHORT).show();
             }
         });
     }

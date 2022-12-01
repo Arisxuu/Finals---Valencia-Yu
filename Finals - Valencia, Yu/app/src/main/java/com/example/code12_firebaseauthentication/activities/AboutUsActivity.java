@@ -39,6 +39,10 @@ public class AboutUsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aboutus);
 
+        //Removes action bar
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
 
         //For web view
         btnLearnMore1 = findViewById(R.id.btn_learnMore1);

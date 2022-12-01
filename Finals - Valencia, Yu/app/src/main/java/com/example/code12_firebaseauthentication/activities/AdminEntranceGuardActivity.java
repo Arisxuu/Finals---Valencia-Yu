@@ -38,6 +38,11 @@ public class AdminEntranceGuardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_entrance_guard);
 
+        //Removes action bar
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
         tvScanForEntry = findViewById(R.id.tv_scanForEntry);
 
         //Scan QR code

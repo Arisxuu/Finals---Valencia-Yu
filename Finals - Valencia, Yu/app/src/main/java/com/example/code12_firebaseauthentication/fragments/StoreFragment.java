@@ -1,4 +1,4 @@
-package com.example.code12_firebaseauthentication.activities;
+package com.example.code12_firebaseauthentication.fragments;
 
 import android.os.Bundle;
 

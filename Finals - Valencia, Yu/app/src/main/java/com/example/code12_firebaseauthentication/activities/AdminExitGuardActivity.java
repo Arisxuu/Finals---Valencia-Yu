@@ -33,6 +33,11 @@ public class AdminExitGuardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_exit_guard);
 
+        //Removes action bar
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
         tvScanForExit = findViewById(R.id.tv_scanForExit);
 
         //Scan QR code

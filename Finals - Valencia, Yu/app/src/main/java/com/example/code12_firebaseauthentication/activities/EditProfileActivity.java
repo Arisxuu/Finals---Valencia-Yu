@@ -58,6 +58,11 @@ public class EditProfileActivity extends AppCompatActivity {
         btnChangeBday = findViewById(R.id.btn_epBirthdayPicker);
         btnSave = findViewById(R.id.btn_save);
 
+        //Removes action bar
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
         mRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

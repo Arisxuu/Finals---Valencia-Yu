@@ -22,6 +22,11 @@ public class AdminJobOwnerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_job_owner);
 
+        //Removes action bar
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
         tvPaykids = findViewById(R.id.tv_payKids);
 
         //Scan QR code

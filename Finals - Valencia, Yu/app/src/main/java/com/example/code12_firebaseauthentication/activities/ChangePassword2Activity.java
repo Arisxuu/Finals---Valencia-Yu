@@ -40,6 +40,11 @@ public class ChangePassword2Activity extends AppCompatActivity {
         etNewRepeatPassword = findViewById(R.id.et_cpRepeatNewPassword);
         btnFinish = findViewById(R.id.btn_cpFinishChangePw);
 
+        //Removes action bar
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
         btnFinish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,7 +54,7 @@ public class ChangePassword2Activity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()) {
                                 Toast.makeText(ChangePassword2Activity.this, "Password has been changed successfully.", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(ChangePassword2Activity.this, AboutUsActivity.class));
+                                startActivity(new Intent(ChangePassword2Activity.this, HomeActivity.class));
                                 finish();
                             } else {
                                 Toast.makeText(ChangePassword2Activity.this, "An error has occured, please try again.", Toast.LENGTH_SHORT).show();
